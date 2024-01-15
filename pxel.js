@@ -4,40 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const pixelatedImage = document.getElementById('pixelated-image'); // Assuming this is your image element
   const timerDisplay = document.getElementById('timer');
   const correctAnswer = "STONEHENGE"; // Replace with the actual correct answer
-  const localStorageKey = 'blrd_last_played'; // Unique key for storing the last played date
-
-  function canPlayGame() {
-    const lastPlayedDate = localStorage.getItem(localStorageKey);
-
-    if (!lastPlayedDate) {
-      return true; // User has not played before
-    }
-
-    const currentDate = new Date();
-    const lastPlayed = new Date(lastPlayedDate);
-
-    // Check if the current date is later than the last played date
-    return currentDate > lastPlayed;
-  }
-
-  function setLastPlayedDate() {
-    const currentDate = new Date();
-    localStorage.setItem(localStorageKey, currentDate.toISOString());
-  }
-
-  function startGame() {
-    if (canPlayGame()) {
-      welcomePopup.style.display = 'none';
-      countdownTimer = setInterval(updateTimer, 1000);
-      updateTimer();
-      guessInputs[0].focus();
-      setLastPlayedDate(); // Record the date when the game starts
-    } else {
-      alert('You can only play once per day. Try again tomorrow!');
-    }
-  }
-
-  welcomePopup.querySelector('#startButton').addEventListener('click', startGame);
 
   let timeLeft = 90;
   let gameEnded = false;
