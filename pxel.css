@@ -16,8 +16,8 @@ hr {
 }
 
 #photo {
-  margin-left: 450px;
-  margin-right: 450px;
+  width: 500px;
+  height: auto;
 }
 
 .image-container {
