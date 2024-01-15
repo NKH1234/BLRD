@@ -18,6 +18,7 @@ hr {
 #photo {
   width: 500px;
   height: auto;
+  margin: 0 auto; /* Center the image horizontally */
 }
 
 .image-container {
