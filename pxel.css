@@ -27,8 +27,8 @@ hr {
 .image-container {
     position: relative;
     overflow: hidden;
-    width: 70%; /* Adjust to your image dimensions */
-    height: auto; /* Adjust to your image dimensions */
+    width: 500px; /* Adjust to your image dimensions */
+    height: 500px; /* Adjust to your image dimensions */
   }
   
   #pixelated-image {
