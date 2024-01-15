@@ -16,8 +16,8 @@ hr {
 }
 
 #photo {
-    width: 70%;
-    height: auto;
+    width: 100%;
+    height: 300px;
     margin: 0 auto;
     margin-top: 3px;
     display: flex;
@@ -27,12 +27,12 @@ hr {
 .image-container {
     position: relative;
     overflow: hidden;
-    width: 500px; /* Adjust to your image dimensions */
-    height: 500px; /* Adjust to your image dimensions */
+    width: 100%; /* Adjust to your image dimensions */
+    height: auto; /* Adjust to your image dimensions */
   }
   
   #pixelated-image {
-    width: 100%;
+    max-width: 100%;
     filter: blur(20px); /* Initial blur amount */
     transition: filter 0.5s ease; /* Transition over 0.5 seconds */
   }  
