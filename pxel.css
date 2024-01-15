@@ -19,7 +19,10 @@ hr {
   width: 100%;
   max-width: 500px; /* Set a maximum width as needed */
   height: auto;
-  margin: 0 auto; /* Center the image horizontally */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .image-container {
@@ -28,7 +31,6 @@ hr {
   max-width: 100%; /* Set a maximum width as needed */
   height: auto; /* Set a maximum height as needed */
   display: block;
-  margin: 0 auto; /* Center the image horizontally */
 }
 
 #pixelated-image {
