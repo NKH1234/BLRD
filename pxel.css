@@ -16,26 +16,24 @@ hr {
 }
 
 #photo {
-    width: 100%;
-    height: 300px;
-    margin: 3px 100px 0 100px;
-    display: flex;
-    flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .image-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%; /* Adjust to your image dimensions */
-    height: auto; /* Adjust to your image dimensions */
-  }
-  
-  #pixelated-image {
-    max-width: 100%;
-    max-height: 100%;
-    filter: blur(20px); /* Initial blur amount */
-    transition: filter 0.5s ease; /* Transition over 0.5 seconds */
-  }  
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  max-height: auto; /* Set a maximum height as needed */
+  margin-left: 400px;
+  margin-right: 400px;
+}
+
+#pixelated-image {
+  width: 100%;
+  height: auto;
+  filter: blur(20px);
+  transition: filter 0.5s ease;
+}
 
 .guess-container {
   text-align: center;
