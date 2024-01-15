@@ -113,14 +113,45 @@ document.addEventListener("DOMContentLoaded", function() {
   function showScoreCard(score) {
     const scoreCard = document.createElement('div');
     scoreCard.classList.add('score-card');
-
+  
     const scoreMessage = document.createElement('p');
-    scoreMessage.textContent = `You did it! Your score is ${score} seconds!`;
-
+    scoreMessage.textContent = `Your score is ${score} seconds!`;
+  
+    const socialMediaIcons = document.createElement('div');
+    socialMediaIcons.classList.add('social-icons');
+  
+    const facebookCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try is out at blrdgame.com`);
+    const facebookIcon = createSocialMediaIcon('Facebook', `https://www.facebook.com/sharer/sharer.php?u=https://blrdgame.com&quote=${facebookCaption}`, 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png');
+    socialMediaIcons.appendChild(facebookIcon);
+  
+    const twitterCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try is out at blrdgame.com`);
+    const twitterIcon = createSocialMediaIcon('Twitter', `https://twitter.com/intent/tweet?url=https://blrdgame.com&text=${twitterCaption}`, 'https://upload.wikimedia.org/wikipedia/commons/9/95/Twitter_new_X_logo.png');
+    socialMediaIcons.appendChild(twitterIcon);
+  
+    const instagramCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try is out at blrdgame.com`);
+    const instagramIcon = createSocialMediaIcon('Instagram', `https://www.instagram.com/?url=https://blrdgame.com&caption=${instagramCaption}`, 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png');
+    socialMediaIcons.appendChild(instagramIcon);
+  
     scoreCard.appendChild(scoreMessage);
-
+    scoreCard.appendChild(socialMediaIcons);
+  
     document.body.appendChild(scoreCard);
   }
+  
+  function createSocialMediaIcon(platform, url, imageUrl) {
+    const socialMediaIcon = document.createElement('a');
+    socialMediaIcon.href = url;
+    socialMediaIcon.target = '_blank';
+  
+    const iconImg = document.createElement('img');
+    iconImg.src = imageUrl;
+    iconImg.alt = `Share on ${platform}`;
+    iconImg.style.width = '50px'; // Adjust the width as needed
+  
+    socialMediaIcon.appendChild(iconImg);
+  
+    return socialMediaIcon;
+  }  
 
   function showIncorrectGuessNotification() {
     const notification = document.createElement('div');
