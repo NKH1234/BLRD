@@ -16,17 +16,19 @@ hr {
 }
 
 #photo {
-  width: 500px;
+  width: 100%;
   height: auto;
-  margin: 0 auto; /* Center the image horizontally */
+  max-width: 500px; /* Set a maximum width as needed */
+  margin: 0 auto;
 }
 
 .image-container {
   position: relative;
   overflow: hidden;
-  max-width: 100%;
-  max-height: auto; /* Set a maximum height as needed */
+  max-width: 100%; /* Set a maximum width as needed */
+  height: auto; /* Set a maximum height as needed */
   display: block;
+  margin: 0 auto; /* Center the image */
 }
 
 #pixelated-image {
