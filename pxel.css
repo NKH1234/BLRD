@@ -17,9 +17,9 @@ hr {
 
 #photo {
   width: 100%;
-  height: auto;
   max-width: 500px; /* Set a maximum width as needed */
-  margin: 0 auto;
+  height: auto;
+  margin: 0 auto; /* Center the image horizontally */
 }
 
 .image-container {
@@ -28,7 +28,7 @@ hr {
   max-width: 100%; /* Set a maximum width as needed */
   height: auto; /* Set a maximum height as needed */
   display: block;
-  margin: 0 auto; /* Center the image */
+  margin: 0 auto; /* Center the image horizontally */
 }
 
 #pixelated-image {
