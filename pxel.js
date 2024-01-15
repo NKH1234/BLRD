@@ -215,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function() {
       input.value = letter;
       if (gameEnded) {
         // Change the font color to light gray for revealed correct answer
-        input.style.color = '#ccc'; // Adjust the color as needed
+        input.style.color = '#FFFFFF'; // Adjust the color as needed
       }
     }
   }
