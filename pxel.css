@@ -28,7 +28,7 @@ hr {
     position: relative;
     overflow: hidden;
     width: 500px; /* Adjust to your image dimensions */
-    height: 500px; /* Adjust to your image dimensions */
+    height: 400px; /* Adjust to your image dimensions */
   }
   
   #pixelated-image {
