@@ -19,6 +19,7 @@ hr {
   width: 100%;
   max-width: 500px; /* Adjust the max-width as needed */
   margin: 0 auto; /* Center the image horizontally */
+  pointer-events: none;
 }
 
 .image-container {
