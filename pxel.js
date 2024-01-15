@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let timeLeft = 90;
   let gameEnded = false;
   let countdownTimer; // Declare countdownTimer here
+  let guesses = [];
 
   let welcomePopup; // Declare welcomePopup in the global scope
 
@@ -71,11 +72,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const input = event.target;
     const maxLength = parseInt(input.getAttribute('maxlength'));
     const inputValue = input.value;
-
+  
     if (inputValue.length >= maxLength) {
       moveFocusToNextInput(input);
     }
+  
+    // Update the guesses array based on current input
+    const index = Array.from(guessInputs).indexOf(input);
+    guesses[index] = inputValue;
   }
+  
 
   function moveFocusToNextInput(currentInput) {
     const index = Array.from(guessInputs).indexOf(currentInput);
@@ -230,11 +236,6 @@ document.addEventListener("DOMContentLoaded", function() {
       pixelatedImage.style.filter = `blur(${finalBlur}px)`;
     }
   }
-
-    window.addEventListener('resize', () => {
-    // Call the function to scale the image on window resize
-    scaleImageProportionally();
-  });
   
   guessInputs.forEach(input => {
     input.addEventListener('input', handleInput);
