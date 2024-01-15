@@ -204,18 +204,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Call the function to scale the image on window resize
     scaleImageProportionally();
   });
-
-  function scaleImageProportionally() {
-    const aspectRatio = pixelatedImage.naturalWidth / pixelatedImage.naturalHeight;
-    const newWidth = window.innerWidth;
-    const newHeight = newWidth / aspectRatio;
-
-    pixelatedImage.style.width = `${newWidth}px`;
-    pixelatedImage.style.height = `${newHeight}px`;
-  }
-
-  // Call the function initially to set the initial size
-  scaleImageProportionally();
   
   guessInputs.forEach(input => {
     input.addEventListener('input', handleInput);
