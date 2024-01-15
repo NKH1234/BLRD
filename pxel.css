@@ -16,7 +16,7 @@ hr {
 }
 
 #photo {
-    width: 100%;
+    max-width: 500px;
     height: 300px;
     margin: 0 auto;
     margin-top: 3px;
