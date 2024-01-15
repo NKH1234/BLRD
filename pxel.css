@@ -24,6 +24,9 @@ hr {
   overflow: hidden;
   max-width: 100%;
   max-height: auto; /* Set a maximum height as needed */
+  display: block;
+  margin-left: 450px;
+  margin-right: 450px;
 }
 
 #pixelated-image {
