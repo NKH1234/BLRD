@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const submitButton = document.querySelector('.guess-container button');
   const pixelatedImage = document.getElementById('pixelated-image'); // Assuming this is your image element
   const timerDisplay = document.getElementById('timer');
-  const correctAnswer = "STONEHENGE"; // Replace with the actual correct answer
+  const correctAnswer = "SHEEP"; // Replace with the actual correct answer
 
   let timeLeft = 90;
   let gameEnded = false;
@@ -120,18 +120,22 @@ document.addEventListener("DOMContentLoaded", function() {
     scoreCard.classList.add('score-card');
   
     const scoreMessage = document.createElement('p');
-    scoreMessage.textContent = `Your score is ${score} seconds!`;
+    scoreMessage.textContent = `Your score is ${score} seconds! Use the buttons below to share with friends.`;
   
     const socialMediaIcons = document.createElement('div');
     socialMediaIcons.classList.add('social-icons');
   
-    const facebookCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try is out at blrdgame.com`);
+    const facebookCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com`);
     const facebookIcon = createSocialMediaIcon('Facebook', `https://www.facebook.com/sharer/sharer.php?u=https://blrdgame.com&quote=${facebookCaption}`, 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png');
     socialMediaIcons.appendChild(facebookIcon);
   
-    const twitterCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try is out at blrdgame.com`);
+    const twitterCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com`);
     const twitterIcon = createSocialMediaIcon('Twitter', `https://twitter.com/intent/tweet?url=https://blrdgame.com&text=${twitterCaption}`, 'https://upload.wikimedia.org/wikipedia/commons/9/95/Twitter_new_X_logo.png');
     socialMediaIcons.appendChild(twitterIcon);
+  
+    const shareViaTextCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com`);
+    const shareViaTextIcon = createSocialMediaIcon('Share via Text', `sms:&body=${shareViaTextCaption}`, 'https://cdn.iconscout.com/icon/free/png-256/free-messenger-1859958-1575946.png?f=webp');
+    socialMediaIcons.appendChild(shareViaTextIcon);
   
     scoreCard.appendChild(scoreMessage);
     scoreCard.appendChild(socialMediaIcons);
