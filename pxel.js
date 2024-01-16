@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
   let timeLeft = 90;
   let gameEnded = false;
   let countdownTimer; // Declare countdownTimer here
-  let guesses = [];
 
   let welcomePopup; // Declare welcomePopup in the global scope
 
@@ -133,10 +132,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const twitterCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try is out at blrdgame.com`);
     const twitterIcon = createSocialMediaIcon('Twitter', `https://twitter.com/intent/tweet?url=https://blrdgame.com&text=${twitterCaption}`, 'https://upload.wikimedia.org/wikipedia/commons/9/95/Twitter_new_X_logo.png');
     socialMediaIcons.appendChild(twitterIcon);
-  
-    const instagramCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try is out at blrdgame.com`);
-    const instagramIcon = createSocialMediaIcon('Instagram', `https://www.instagram.com/?url=https://blrdgame.com&caption=${instagramCaption}`, 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png');
-    socialMediaIcons.appendChild(instagramIcon);
   
     scoreCard.appendChild(scoreMessage);
     scoreCard.appendChild(socialMediaIcons);
