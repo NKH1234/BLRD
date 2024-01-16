@@ -13,6 +13,8 @@ hr {
     font-weight: bold;
     letter-spacing: 2px;
     color: white;
+    margin-top: 20px;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
 }
 
 #photo {
@@ -30,6 +32,7 @@ hr {
   height: auto; /* Maintain the aspect ratio */
   margin: 0 auto; /* Center the image horizontally */
 }
+
 
 #pixelated-image {
   width: 100%;
@@ -96,7 +99,7 @@ input[type="text"] {
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  margin-top: 100px; /* Adjust this value to move the scorecard further down */
+  margin-top: 150px; /* Adjust this value to move the scorecard further down */
 }
 
 .score-card p {
@@ -218,3 +221,4 @@ input[type="text"] {
 .popup-content button:hover {
   background-color: #0056b3;
 }
+
