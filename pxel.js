@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const submitButton = document.querySelector('.guess-container button');
   const pixelatedImage = document.getElementById('pixelated-image'); // Assuming this is your image element
   const timerDisplay = document.getElementById('timer');
-  const correctAnswer = "SHEEP"; // Replace with the actual correct answer
+  const correctAnswer = "COFFEE"; // Replace with the actual correct answer
 
   let timeLeft = 90;
   let gameEnded = false;
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
     socialMediaIcons.appendChild(facebookIcon);
   
     const twitterCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com #game #fun #daily #gamedev #blrd #blrdgame`);
-    const twitterIcon = createSocialMediaIcon('Twitter', `https://twitter.com/intent/tweet?text=${twitterCaption}`, 'https://upload.wikimedia.org/wikipedia/commons/9/95/Twitter_new_X_logo.png');
+    const twitterIcon = createSocialMediaIcon('Twitter', `https://twitter.com/intent/tweet?url=https://blrdgame.com&text=${twitterCaption}`, 'https://upload.wikimedia.org/wikipedia/commons/9/95/Twitter_new_X_logo.png');
     socialMediaIcons.appendChild(twitterIcon);
   
     const shareViaTextCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com`);
