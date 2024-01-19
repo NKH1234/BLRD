@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const submitButton = document.querySelector('.guess-container button');
   const pixelatedImage = document.getElementById('pixelated-image'); // Assuming this is your image element
   const timerDisplay = document.getElementById('timer');
-  const correctAnswer = "GIRAFFE"; // Replace with the actual correct answer
+  const correctAnswer = "LONDON"; // Replace with the actual correct answer
 
   let timeLeft = 90;
   let gameEnded = false;
