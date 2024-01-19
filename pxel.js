@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function() {
     socialMediaIcons.appendChild(shareViaTextIcon);
 
     const snapchatCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com`);
-    const snapchatIcon = createSocialMediaIcon('Snapchat', `snapchat:&body=${snapchatCaption}`, 'https://cdn.freebiesupply.com/logos/large/2x/snapchat-logo-png-transparent.png');
+    const snapchatIcon = createSocialMediaIcon('Snapchat', `snapchat:&text=${snapchatCaption}`, 'https://cdn.freebiesupply.com/logos/large/2x/snapchat-logo-png-transparent.png');
     socialMediaIcons.appendChild(snapchatIcon);
   
     scoreCard.appendChild(scoreMessage);
