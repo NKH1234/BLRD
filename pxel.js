@@ -115,29 +115,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
-  function createShareButton(score) {
-    const shareButton = document.createElement('button');
-    shareButton.textContent = 'Share';
-    shareButton.addEventListener('click', function() {
-      if (navigator.share) {
-        const shareData = {
-          title: 'BLRD Game',
-          text: `I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com`,
-          url: 'https://blrdgame.com',
-        };
-  
-        navigator.share(shareData)
-          .then(() => console.log('Shared successfully'))
-          .catch((error) => console.error('Error sharing:', error));
-      } else {
-        // Fallback for browsers that do not support the Web Share API
-        alert('Web Share API is not supported on this browser.');
-      }
-    });
-  
-    return shareButton;
-  }
-
   function showScoreCard(score) {
     const scoreCard = document.createElement('div');
     scoreCard.classList.add('score-card');
@@ -159,9 +136,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const shareViaTextCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com`);
     const shareViaTextIcon = createSocialMediaIcon('Share via Text', `sms:&body=${shareViaTextCaption}`, 'https://cdn.iconscout.com/icon/free/png-256/free-messenger-1859958-1575946.png?f=webp');
     socialMediaIcons.appendChild(shareViaTextIcon);
-
-    const shareButton = createShareButton(score);
-    socialMediaIcons.appendChild(shareButton);
   
     scoreCard.appendChild(scoreMessage);
     scoreCard.appendChild(socialMediaIcons);
