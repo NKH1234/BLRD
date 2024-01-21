@@ -15,21 +15,20 @@ document.addEventListener("DOMContentLoaded", function() {
   const LAST_PLAY_DATE_KEY = 'blrdLastPlayDate';
  
   function canPlayGameToday() {
-    const lastPlayDate = localStorage.getItem(LAST_PLAY_DATE_KEY);
-    if (!lastPlayDate) {
+    const lastPlayTimestamp = localStorage.getItem(LAST_PLAY_DATE_KEY);
+    if (!lastPlayTimestamp) {
       return true; // User hasn't played before
     }
   
-    const today = new Date();
-    const lastPlayDateObj = new Date(lastPlayDate);
+    const todayTimestamp = new Date().setHours(0, 0, 0, 0); // Get the timestamp for the start of today
   
-    // Compare only the date portion (not the time)
-    return today.toDateString() !== lastPlayDateObj.toDateString();
-  }  
+    return todayTimestamp > parseInt(lastPlayTimestamp);
+  }
+  
 
   function setLastPlayDate() {
-    const today = new Date().toLocaleDateString();
-    localStorage.setItem(LAST_PLAY_DATE_KEY, today);
+    const timestamp = new Date().getTime(); // Get the current timestamp
+    localStorage.setItem(LAST_PLAY_DATE_KEY, timestamp);
   }
  
   function loadUserScores() {
