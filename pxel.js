@@ -19,10 +19,13 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!lastPlayDate) {
       return true; // User hasn't played before
     }
-
-    const today = new Date().toLocaleDateString();
-    return lastPlayDate !== today;
-  }
+  
+    const today = new Date();
+    const lastPlayDateObj = new Date(lastPlayDate);
+  
+    // Compare only the date portion (not the time)
+    return today.toDateString() !== lastPlayDateObj.toDateString();
+  }  
 
   function setLastPlayDate() {
     const today = new Date().toLocaleDateString();
