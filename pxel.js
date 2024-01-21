@@ -84,12 +84,23 @@ document.addEventListener("DOMContentLoaded", function() {
       countdownTimer = setInterval(updateTimer, 1000);
       updateTimer();
       guessInputs[0].focus();
-      setLastPlayDate(); // Move setLastPlayDate here
+      setLastPlayDate();
     } else {
-      // User has already played today, show scorecard with the actual score
+      // User has already played today
       revealCorrectAnswer(); // Ensure the correct answer is revealed
       pixelatedImage.style.filter = 'none'; // Ensure the image remains clear
-      showScoreCard(getUserScore()); // Display the user's actual score
+  
+      if (getUserScore() > 0) {
+        // User successfully completed the game, display the actual score
+        const actualScore = getUserScore();
+        console.log('Actual Score:', actualScore);
+        showScoreCard(actualScore);
+      } else {
+        // User did not successfully complete the game, display a fixed score of 90
+        console.log('Fixed Score: 90');
+        showScoreCard(90);
+      }
+  
       disableGuessSubmission();
     }
   }
