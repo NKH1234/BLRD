@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
       countdownTimer = setInterval(updateTimer, 1000);
       updateTimer();
       guessInputs[0].focus();
-      setLastPlayDate();
+      setLastPlayDate(); // Move setLastPlayDate here
     } else {
       // User has already played today, show scorecard with the actual score
       revealCorrectAnswer(); // Ensure the correct answer is revealed
@@ -92,7 +92,8 @@ document.addEventListener("DOMContentLoaded", function() {
       showScoreCard(getUserScore()); // Display the user's actual score
       disableGuessSubmission();
     }
-  }  
+  }
+  
   
   function getUserScore() {
     const lastScore = userScores.length > 0 ? userScores[userScores.length - 1] : 0;
