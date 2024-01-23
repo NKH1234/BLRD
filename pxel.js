@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const submitButton = document.querySelector('.guess-container button');
   const pixelatedImage = document.getElementById('pixelated-image');
   const timerDisplay = document.getElementById('timer');
-  const correctAnswer = "DESERT";
+  const correctAnswer = "LINCOLN";
  
  
   let timeLeft = 90;
