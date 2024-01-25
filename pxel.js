@@ -126,6 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <li>Type your guesses in the boxes below the photo. (Hint: there is one letter per box).</li>
         <li>As the timer counts down, the photo will get clearer, making it easier to see what it is.</li>
         <li>The goal is to correctly guess the photo in the least amount of time. Good luck!</li>
+        <li>Read our <a href="privacypolicy.html" target="_blank">Privacy Policy</a>.</li>
       </ul>
       <button id="startButton">Start</button>
     </div>
