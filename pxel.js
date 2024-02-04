@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const submitButton = document.querySelector('.guess-container button');
   const pixelatedImage = document.getElementById('pixelated-image');
   const timerDisplay = document.getElementById('timer');
-  const correctAnswer = "RIVER";
+  const correctAnswer = "WOLF";
  
  
   let timeLeft = 90;
@@ -172,10 +172,14 @@ document.addEventListener("DOMContentLoaded", function() {
  
   function handleBackspace(event) {
     const input = event.target;
-    if (input.value === '' && event.code === 'Backspace') {
+    const isInputEmpty = input.value === '';
+  
+    if (isInputEmpty && event.code === 'Backspace' && !event.repeat) {
       moveFocusToPreviousInput(input);
     }
   }
+  
+  
  
  
   function moveFocusToPreviousInput(currentInput) {
