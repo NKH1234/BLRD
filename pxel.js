@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const submitButton = document.querySelector('.guess-container button');
   const pixelatedImage = document.getElementById('pixelated-image');
   const timerDisplay = document.getElementById('timer');
-  const correctAnswer = "SURFER";
+  const correctAnswer = "BREAD";
  
  
   let timeLeft = 90;
@@ -178,22 +178,17 @@ document.addEventListener("DOMContentLoaded", function() {
       moveFocusToPreviousInput(input);
     }
   }
-  
-  
  
  
   function moveFocusToPreviousInput(currentInput) {
     const index = Array.from(guessInputs).indexOf(currentInput);
     const prevIndex = index - 1;
- 
- 
+  
     if (prevIndex >= 0) {
       guessInputs[prevIndex].focus();
-      guessInputs[prevIndex].value = '';
     }
   }
- 
- 
+  
   function handleEnter(event) {
     if (event.key === 'Enter') {
       event.preventDefault();
@@ -213,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const userStatsMessage = document.createElement('p');
     userStatsMessage.classList.add('user-stats');
     userStatsMessage.innerHTML = `
-    <h3><u>Your Stats</u></h3>
+    <h2><u>Your Stats</u></h2>
     <div class="stat">
       <span class="stat-label">Best Score:</span>
       <span class="stat-value">${userStats.bestScore} seconds</span>
