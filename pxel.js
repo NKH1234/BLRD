@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const submitButton = document.querySelector('.guess-container button');
   const pixelatedImage = document.getElementById('pixelated-image');
   const timerDisplay = document.getElementById('timer');
-  const correctAnswer = "RACE";
+  const correctAnswer = "BEE";
  
  
   let timeLeft = 90;
@@ -226,13 +226,13 @@ document.addEventListener("DOMContentLoaded", function() {
  
     const socialMediaIcons = document.createElement('div');
     socialMediaIcons.classList.add('social-icons');
-     const facebookCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com`);
+     const facebookCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com\n\nMy Stats 📊\n🏆: ${userStats.bestScore} seconds\n👎: ${userStats.worstScore} seconds\nAvg. of Last 🖐 Scores: ${userStats.averageLastFive.toFixed(2)} seconds`);
     const facebookIcon = createSocialMediaIcon('Facebook', `https://www.facebook.com/sharer/sharer.php?u=https://blrdgame.com&quote=${facebookCaption}`, 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Facebook_Logo_2023.png');
     socialMediaIcons.appendChild(facebookIcon);
-     const twitterCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com #game #fun #daily #gamedev #blrd #blrdgame`);
+     const twitterCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com\n\nMy Stats 📊\n🏆: ${userStats.bestScore} seconds\n👎: ${userStats.worstScore} seconds\nAvg. of Last 🖐 Scores: ${userStats.averageLastFive.toFixed(2)} seconds\n#game #fun #daily #gamedev #blrd #blrdgame`);
     const twitterIcon = createSocialMediaIcon('Twitter', `https://twitter.com/intent/tweet?url=https://blrdgame.com&text=${twitterCaption}`, 'https://img.freepik.com/free-vector/new-2023-twitter-logo-x-icon-design_1017-45418.jpg?w=996&t=st=1705632141~exp=1705632741~hmac=7a1c4054cea68cfc136d5291e138b992449bcfa9cc2b86392006442ea0ad01c0');
     socialMediaIcons.appendChild(twitterIcon);
-     const shareViaTextCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com`);
+     const shareViaTextCaption = encodeURIComponent(`I solved today's BLRD game in ${score} seconds! Try it out at blrdgame.com\n\nMy Stats 📊\n🏆: ${userStats.bestScore} seconds\n👎: ${userStats.worstScore} seconds\nAvg. of Last 🖐 Scores: ${userStats.averageLastFive.toFixed(2)} seconds`);
     const shareViaTextIcon = createSocialMediaIcon('Share via Text', `sms:&body=${shareViaTextCaption}`, 'https://cdn.iconscout.com/icon/free/png-256/free-messenger-1859958-1575946.png?f=webp');
     socialMediaIcons.appendChild(shareViaTextIcon);
      scoreCard.appendChild(scoreMessage);
