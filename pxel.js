@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const submitButton = document.querySelector('.guess-container button');
   const pixelatedImage = document.getElementById('pixelated-image');
   const timerDisplay = document.getElementById('timer');
-  const correctAnswer = "TACOS";
+  const correctAnswer = "BOOKS";
  
  
   let timeLeft = 90;
@@ -151,12 +151,28 @@ document.addEventListener("DOMContentLoaded", function() {
     const input = event.target;
     const maxLength = parseInt(input.getAttribute('maxlength'));
     const inputValue = input.value;
-     if (inputValue.length >= maxLength) {
+  
+    if (inputValue.length >= maxLength) {
       moveFocusToNextInput(input);
     }
-     const index = Array.from(guessInputs).indexOf(input);
+  
+    const index = Array.from(guessInputs).indexOf(input);
     guesses[index] = inputValue;
+  
+    // If the current input has a value, move the cursor to the end
+    if (inputValue.length > 0) {
+      const length = inputValue.length;
+      input.setSelectionRange(length, length);
+    } else {
+      // If the current input is empty, check the previous input
+      if (index > 0 && guessInputs[index - 1].value !== '') {
+        guessInputs[index - 1].focus();
+        const length = guessInputs[index - 1].value.length;
+        guessInputs[index - 1].setSelectionRange(length, length);
+      }
+    }
   }
+  
  
  
   function moveFocusToNextInput(currentInput) {
@@ -175,9 +191,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const isInputEmpty = input.value === '';
   
     if (isInputEmpty && event.code === 'Backspace' && !event.repeat) {
+      // Move focus to the previous input
       moveFocusToPreviousInput(input);
     }
   }
+  
+  
  
  
   function moveFocusToPreviousInput(currentInput) {
@@ -344,6 +363,24 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
     input.addEventListener('keyup', handleBackspace);
+    input.addEventListener('input', function (event) {
+      const input = event.target;
+      const maxLength = parseInt(input.getAttribute('maxlength'));
+      let inputValue = input.value;
+    
+      if (inputValue.length > maxLength) {
+        inputValue = inputValue.slice(0, maxLength); // Truncate input to maxLength
+      }
+    
+      // Store the caret position before modifying the input value
+      const caretPosition = input.selectionStart;
+    
+      // Update the input value with the truncated value
+      input.value = inputValue;
+    
+      // Restore the caret position after updating the input value
+      input.setSelectionRange(caretPosition, caretPosition);
+    });
   });
  
  
