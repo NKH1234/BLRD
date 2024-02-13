@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const submitButton = document.querySelector('.guess-container button');
   const pixelatedImage = document.getElementById('pixelated-image');
   const timerDisplay = document.getElementById('timer');
-  const correctAnswer = "BOOKS";
+  const correctAnswer = "TOKYO";
  
  
   let timeLeft = 90;
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
   function handleInput(event) {
     const input = event.target;
     const maxLength = parseInt(input.getAttribute('maxlength'));
-    const inputValue = input.value;
+    let inputValue = input.value;
   
     if (inputValue.length >= maxLength) {
       moveFocusToNextInput(input);
@@ -172,6 +172,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   }
+  
+  guessInputs.forEach(input => {
+    input.addEventListener('input', handleInput);
+    input.addEventListener('keyup', handleInput); // Add keyup event
+  });
+  
   
  
  
